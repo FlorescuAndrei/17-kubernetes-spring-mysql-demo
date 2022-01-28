@@ -22,7 +22,7 @@ Steps:
     -  minikube start --driver hyperv  
     Additional commands that may be useful:  
       -  minikube start --memory=4098 --driver hyperv        &emsp; &emsp; &emsp;          #if you need more memory (default 2200) 
-      -  minikube delete              &emsp; &emsp; &emsp;           #destroy all files in minikube 
+      -  minikube delete        &emsp; &emsp; &emsp;      &emsp; &emsp; &emsp;           #destroy all files in minikube 
   
   2. Create namespace for the app. Optional step 
      -  kubectl get ns
@@ -36,14 +36,14 @@ Steps:
      -  kubectl apply -f mysqldb.yaml
      -  kubectl get all -n customer-namespace
      -  kubectl get pod -n customer-namespace
-     -  kubectl get pod --watch -n customer-namespace	             &emsp; &emsp; &emsp;	#the console wait for changes
+     -  kubectl get pod --watch -n customer-namespace	         &emsp; &emsp; &emsp;     &emsp; &emsp; &emsp;	#the console wait for changes
      -  kubectl describe pod mysqldb-deployment-64f9d4988f-9khxw -n customer-namespace             &emsp; &emsp; &emsp;      #pod name will be different.
      -  kubectl logs mysqldb-deployment-64f9d4988f-9khxw -n customer-namespace
  5. Create app deployment and service  
      -  kubectl apply -f webapp.yaml
    
  6. Create ingress for accessing app in a friendly user way: webapp.com
-     -  minikube addons enable ingress	             &emsp; &emsp; &emsp;    #install ingress controller
+     -  minikube addons enable ingress	          &emsp; &emsp; &emsp;    &emsp; &emsp; &emsp;    #install ingress controller
      -  kubectl get ns 
      -  kubectl get pods -n ingress-nginx                  
      -  kubectl apply -f webapp-ingress.yaml
@@ -52,8 +52,12 @@ Steps:
  
  7. Resolve local DNS name 'webapp.com' to minikube ip  
  If you are running Minikube locally, use minikube ip to get the external IP. The IP address displayed within the ingress list will be the internal IP.  
-     -  172.17.72.152  webapp.com  &emsp; &emsp; &emsp;   # add this line to the bottom of the c:\windows\system32\drivers\etc\hosts file on your windows computer (172.17.72.152 = minikube ip): 
-     -  minikube ip                &emsp; &emsp; &emsp;	#If you are running Minikube locally, use minikube ip to get the external IP. The IP address displayed within the ingress list will be the internal IP.
+     -  minikube ip     
+       
+       
+ Add this line to the bottom of the c:\windows\system32\drivers\etc\hosts file on your windows computer (172.17.72.152 = minikube ip)
+     -  172.17.72.152  webapp.com 
+    
  
 
  
