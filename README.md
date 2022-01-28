@@ -4,7 +4,7 @@ Kubernetes learning project.
 Take a previous app,  [14-thymeleaf-demo](https://github.com/FlorescuAndrei/14-thymeleaf-demo.git),  build a docker image.    
 Upload the image to docker hub, see: [16-docker-spring-boot-mysql-demo](https://github.com/FlorescuAndrei/16-docker-spring-boot-mysql-demo.git).   
 
-Install Minikube and kubectl
+Install Minikube and kubectl.   
 Create YAML files :  
   -  namespace.yaml,
   -  secret.yaml,
