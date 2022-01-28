@@ -11,8 +11,9 @@
        
        
   Notes:  
-  We should use externalized property files for apps.
-  I changed application.properties to application.yaml and app works. It is still internal file, i must find a way to externalized it.
+  We should use externalized property files for apps.   
+  I changed application.properties to application.yaml and app works.   
+  It is still internal file, i must find a way to externalized it.
   
   
   
