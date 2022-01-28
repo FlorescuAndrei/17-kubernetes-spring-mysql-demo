@@ -75,7 +75,7 @@ Steps:
          
          
 Alternativ setps or other posible steps:  
-    -  see box folder           
+    -  see [box](https://github.com/FlorescuAndrei/17-kubernetes-spring-mysql-demo/tree/main/box) folder           
          
      
   
