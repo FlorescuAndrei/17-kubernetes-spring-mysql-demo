@@ -53,10 +53,12 @@ Steps:
  7. Resolve local DNS name 'webapp.com' to minikube ip    
      -  minikube ip 
       
- If you are running Minikube locally, use minikube ip to get the external IP. The IP address displayed within the ingress list will be the internal IP.  
+ If you are running Minikube locally, use minikube ip to get the external IP. The IP address displayed within the ingress list will be the internal IP.     
+ 
+ Add this line to the bottom of the c:\windows\system32\drivers\etc\hosts file on your windows computer (172.17.72.152 = minikube ip)  
  
       -  172.17.72.152  webapp.com   
- Add this line to the bottom of the c:\windows\system32\drivers\etc\hosts file on your windows computer (172.17.72.152 = minikube ip)
+ 
     
     
  
