@@ -3,7 +3,7 @@
   Other posible way: 
 
   Use NodePort instead of ingress. 
-  It provide an extern Ip.
+  It provide an extern Ip.  
   At step 5:  
     - kubectl apply webapp-nodeport.yaml &nbsp; &nbsp; &nbsp; &nbsp;  # instead of webapp.yaml    
     -  minikube service webapp-service	&nbsp; &nbsp; &nbsp; &nbsp; # will allocate external Ip address and start the browser,  and automatically load the app on: http://172.27.110.51:30100/customers/list  (minikube ip : nodePort).  
