@@ -2,7 +2,7 @@
 Kubernetes learning project.    
    
 Take a previous app,  [14-thymeleaf-demo](https://github.com/FlorescuAndrei/14-thymeleaf-demo.git),  build a docker image.    
-Upload the image to docker hub [16-docker-spring-boot-mysql-demo](https://github.com/FlorescuAndrei/16-docker-spring-boot-mysql-demo.git).   
+Upload the image to docker hub, see: [16-docker-spring-boot-mysql-demo](https://github.com/FlorescuAndrei/16-docker-spring-boot-mysql-demo.git).   
 
 Install Minikube and kubectl
 Create YAML files :  
@@ -11,6 +11,8 @@ Create YAML files :
   -  mysqldb.yaml.  
   -  webapp.yaml  
   -  webapp-ingress.yaml  
+    
+    
 Start minikube and use kubectl to apply files.
 After that, app is running and can be acces on local webapp.com  
 
@@ -34,6 +36,22 @@ Steps:
      -  kubectl apply -f mysqldb.yaml
      -  kubectl get all -n customer-namespace
      -  kubectl get pod -n customer-namespace
+     -  kubectl get pod --watch -n customer-namespace		#the console wait for changes
+     -  kubectl describe pod mysqldb-deployment-64f9d4988f-9khxw -n customer-namespace         #pod name will be different.
+     -  kubectl logs mysqldb-deployment-64f9d4988f-9khxw -n customer-namespace
+ 5. Create app deployment and service  
+     -  kubectl apply -f webapp.yaml
+   
+ 6. Create ingress for accessing app in a friendly user way: webapp.com
+     -  minikube addons enable ingress		#install ingress controller
+     -  kubectl get ns 
+     -  kubectl get pods -n ingress-nginx
+     -  kubectl apply -f webapp-ingress.yaml
+
+ 
+ 
+  
+     
      
   Alternativ setps or other posible steps: 
 1. modify database original mysql image to match app specification:  add new user and password, add database schema:
