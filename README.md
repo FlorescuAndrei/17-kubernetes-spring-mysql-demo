@@ -22,7 +22,7 @@ Steps:
     -  minikube start --driver hyperv  
     Additional commands that may be useful:  
       -  minikube start --memory=4098 --driver hyperv        &emsp; &emsp; &emsp;          #if you need more memory (default 2200) 
-      -  minikube delete        &emsp; &emsp; &emsp;      &emsp; &emsp; &emsp;           #destroy all files in minikube 
+      -  minikube delete        &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp;        #destroy all files in minikube 
   
   2. Create namespace for the app. Optional step 
      -  kubectl get ns
@@ -36,7 +36,7 @@ Steps:
      -  kubectl apply -f mysqldb.yaml
      -  kubectl get all -n customer-namespace
      -  kubectl get pod -n customer-namespace
-     -  kubectl get pod --watch -n customer-namespace	         &emsp; &emsp; &emsp;     &emsp; &emsp; &emsp;	#the console wait for changes
+     -  kubectl get pod --watch -n customer-namespace	        &emsp; &emsp; &emsp; &emsp; &emsp; &emsp;&emsp; &emsp; &emsp;	 #the console wait for changes
      -  kubectl describe pod mysqldb-deployment-64f9d4988f-9khxw -n customer-namespace             &emsp; &emsp; &emsp;      #pod name will be different.
      -  kubectl logs mysqldb-deployment-64f9d4988f-9khxw -n customer-namespace
  5. Create app deployment and service  
@@ -50,13 +50,14 @@ Steps:
      -  kubectl get ingress -n customer-namespace
      -  kubectl describe ingress -n customer-namespace webapp-ingress
  
- 7. Resolve local DNS name 'webapp.com' to minikube ip  
+ 7. Resolve local DNS name 'webapp.com' to minikube ip    
+     -  minikube ip 
+      
  If you are running Minikube locally, use minikube ip to get the external IP. The IP address displayed within the ingress list will be the internal IP.  
-     -  minikube ip     
-       
-       
+ 
+      -  172.17.72.152  webapp.com   
  Add this line to the bottom of the c:\windows\system32\drivers\etc\hosts file on your windows computer (172.17.72.152 = minikube ip)
-     -  172.17.72.152  webapp.com 
+    
     
  
 
