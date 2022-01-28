@@ -21,8 +21,8 @@ Steps:
  1. Start minikube  
     -  minikube start --driver hyperv
     Additional commands that may be useful:  
-      -  minikube start --memory=4098 --driver hyperv &nbsp&nbsp&nbsp #if you need more memory (default 2200)
-      -  minikube delete  &nbsp; &nbsp; &nbsp; #destroy all files in minikube 
+      -  minikube start --memory=4098 --driver hyperv &emsp; #if you need more memory (default 2200)
+      -  minikube delete  @ensp; #destroy all files in minikube 
   
   2. Create namespace for the app. Optional step 
      -  kubectl get ns
