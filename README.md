@@ -41,6 +41,8 @@ Steps:
      -  kubectl logs mysqldb-deployment-64f9d4988f-9khxw -n customer-namespace
  5. Create app deployment and service  
      -  kubectl apply -f webapp.yaml
+     -  kubectl get pod -n customer-namespace
+     -  kubectl logs webapp-deployment-656d6bb7d7-wpj9d -n customer-namespace
    
  6. Create ingress for accessing app in a friendly user way: webapp.com
      -  minikube addons enable ingress	          &emsp; &emsp; &emsp;    &emsp; &emsp; &emsp;    #install ingress controller
@@ -60,10 +62,7 @@ Steps:
       -  172.17.72.152  webapp.com   
  
     
-    
- 
 
- 
  
   Tips
   - kubectl get pod    &emsp; --> &emsp;    status must be running, If not wait a few minutes
@@ -71,34 +70,15 @@ Steps:
   - minikube addons enable ingress      &emsp; --> &emsp;  if return error problably minikube runs out of memory, repet commad.
   - kubectl get pods -n ingress-nginx  &emsp; --> &emsp;   ingress-nginx-controller must be running   
   - to edit /etc/hosts file run notepad as administrator and then open file.
+  - in app application.properties the url to database contains the database service name (mysqlc1): 
+      - spring.datasource.url=jdbc:mysql://mysqlc1/web_customer_tracker 
+       
+         
+         
      
-     
-  Alternativ setps or other posible steps: 
-1. modify database original mysql image to match app specification:  add new user and password, add database schema:
-    - pull original mysql image, run in container with changes, commit new image.(creating table with data will not be saved since there are no volume set)
-      - docker run --name mysqldb -p 3306:3306 -e MYSQL_ROOT_PASSWORD=root -e MYSQL_DATABASE=web_customer_tracker -e MYSQL_USER=student -e MYSQL_PASSWORD=student -d mysql
-    - create new image from container:
-      - docker commit mysqldb  florescua/16-mysql-demo:0.1 
-    - create a new repository:
-      - florescua/16-mysql-demo
-    - push new image to docker hub: 
-      - docker push florescua/16-mysql-demo:0.1
-      
-2. create a network to run the app, no docker compose and .yaml file:  
-  - docker network create net1
-  - docker run --name mysqlc1 -p 3306:3306  -d  florescua/16-mysql-demo:0.1
-  - docker network connect net1 mysqlc1
-  - docker run -d -p 8080:8080 --name 16-customer-demo-app --network net1 florescua/16-customer-demo-app:0.1
-  - docker network inspect net1
-  - docker network ls
-  - docker inspect 16-customer-demo-app
+  
  
-
-Notes  
-Error building the .jar file:
-  - After modify application.properti and change localhost to mysqlc1, the app will not run on local environment.
-Will generate build error and no .jar file will be created. To build it, delete all target file and rebuild the app 
-Eclipse project –run as- maven build – goals = package; **check skip test**  
+  
   
 [BACK TO START PAGE](https://github.com/FlorescuAndrei/Start.git)
 
