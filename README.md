@@ -66,10 +66,10 @@ Steps:
  
  
   Tips
-  - kubectl get pod    &emsp --> &emsp    status must be running, If not wait a few minutes
+  - kubectl get pod    &emsp; --> &emsp;    status must be running, If not wait a few minutes
   - check logs
-  - minikube addons enable ingress      &emsp --> &emsp  if return error problably minikube runs out of memory, repet commad.
-  - kubectl get pods -n ingress-nginx  &emsp --> &emsp   ingress-nginx-controller must be running   
+  - minikube addons enable ingress      &emsp; --> &emsp;  if return error problably minikube runs out of memory, repet commad.
+  - kubectl get pods -n ingress-nginx  &emsp; --> &emsp;   ingress-nginx-controller must be running   
   - to edit /etc/hosts file run notepad as administrator and then open file.
      
      
