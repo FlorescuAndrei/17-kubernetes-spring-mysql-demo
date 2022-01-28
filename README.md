@@ -64,14 +64,15 @@ Steps:
     
 
  
-  Tips
+  Tips  
+  - very important to allocate more ram when crating minikube. I run in a lot of problem without knowing why . Even with pods working, when I run webapp.com in browser  I could not access the page because everything was runing very slowly in minikube.
   - kubectl get pod    &emsp; --> &emsp;    status must be running, If not wait a few minutes
   - check logs
   - minikube addons enable ingress      &emsp; --> &emsp;  if return error problably minikube runs out of memory, repet commad.
   - kubectl get pods -n ingress-nginx  &emsp; --> &emsp;   ingress-nginx-controller must be running   
   - to edit /etc/hosts file run notepad as administrator and then open file.
   - in app application.properties the url to database contains the database service name (mysqlc1): 
-      - spring.datasource.url=jdbc:mysql://mysqlc1/web_customer_tracker 
+      - spring.datasource.url=jdbc:mysql://**mysqlc1**/web_customer_tracker 
          
          
 Alternativ setps or other posible steps:  
