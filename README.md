@@ -14,7 +14,7 @@ Create YAML files :
     
     
 Start minikube and use kubectl to apply files.
-After that, app is running and can be acces on local webapp.com  
+After that, app is running and can be acces on local DNS webapp.com  
 
 
 Steps:  
