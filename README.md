@@ -72,8 +72,10 @@ Steps:
   - to edit /etc/hosts file run notepad as administrator and then open file.
   - in app application.properties the url to database contains the database service name (mysqlc1): 
       - spring.datasource.url=jdbc:mysql://mysqlc1/web_customer_tracker 
-       
          
+         
+Alternativ setps or other posible steps:  
+    -  see box folder           
          
      
   
